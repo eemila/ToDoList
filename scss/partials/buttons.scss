@@ -1,0 +1,28 @@
+.add-btn {
+    height: 120px;
+    width: 120px;  
+    border-radius: 50%;
+    border: none; 
+    font-size: 80px; 
+    background-color: $color3; 
+    color: $color1; 
+    position: absolute;  
+    transform: translate(905%, 200%);
+  
+}
+
+.add-btn:hover {
+    cursor: pointer; 
+}
+
+.btn-modal {
+    background-color: $color4; 
+    color: $color1; 
+    border-radius: 5%; 
+    width: 50%; 
+    font-size: 20px; 
+}
+
+.btn-modal:hover{ 
+    background-color: $color2; 
+}

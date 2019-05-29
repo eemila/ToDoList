@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>ToDoList</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Gudea:400,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <!--Font-->
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One&display=swap&subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<!--Header-->  
+    <header class="header">
+        <div class="header-info">
+            <p class="header-title">My Things</p>
+            <!-- <p class="today-is">Today is</p> -->
+            <p class="current-date"></p>
+        </div>
+        <div class="header-task header-personal">
+            <p class="task-no" id="personal-no">Number will be here</p>
+            <p class="header-task-type">Personal</p>
+        </div>
+        <div class="header-task header-business">
+            <p class="task-no" id="business-no">Number will be here</p>
+            <p class="header-task-type">Business</p>
+        </div>
+        <button class="add-btn">+
+          <!-- <i class="fas fa-plus-circle"></i> -->
+        </button>
+    </header>
+
+<!--Dialog-box - Form-->
+<div class="modal" tabindex="-1" role="dialog" id="myModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <i class="fas fa-thumbtack"></i>
+          <h5 class="modal-title">My things</h5>
+          
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!--Radio choose-->
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="personalRadio" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Personal</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="businessRadio" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Business</label>
+              </div>
+            <!--Form-->
+            <form>
+                <div class="form-group">
+                  <label for="formGroupExampleInput">to-do</label>
+                  <input type="text" class="form-control" id="formTask" placeholder="What do you have to do">
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput2">place</label>
+                  <input type="text" class="form-control" id="formPlace" placeholder="Where do you have to do it">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput3">time</label>
+                    <input type="text" class="form-control" id="formTime" placeholder="When do you have to complete">
+                </div>
+            </form>  
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary btn-modal">Pin to Your List</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--Task list-->
+    <section>
+        <div class="container">
+            <div class="my-list">
+                <table class="table table-striped">
+                        <thead>
+                          <tr class="hidden">
+                            <th scope="col">Icon</th>
+                            <th scope="col">Task Name</th>
+                            <th scope="col">Place</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Buttons</th>
+                          </tr>
+                        </thead>
+                        <tbody class="tabBody">
+                          <!-- <tr>
+                            <th scope="row">1</th>                                <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>                                <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                          </tr> -->
+                        </tbody>
+                      </table>    
+            </div>
+        </div>
+    </section>
+    
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
