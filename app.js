@@ -69,9 +69,9 @@ pinBtn.addEventListener("click", function(event){
     $(':input').val('');
 
     // if empty inputs NIE DZIAŁA PÓKI CO 
-    if(formTask === "")&&(formPlace === "")||(formTask === "")&&(formTime === ""){
-        console.log("Type your task before having it pinned");
-    }
+    // if(formTask === "")&&(formPlace === "")||(formTask === "")&&(formTime === ""){
+    //     console.log("Type your task before having it pinned");
+    // }
 
     event.preventDefault();
 }); 
