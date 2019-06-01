@@ -1,6 +1,5 @@
 .header {
     background-image: url("../images/header-bckgrd.jpg");
-    /* background: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) ); */
     background-size: cover;
     background-repeat: no-repeat; 
     background-position: bottom; 
@@ -8,8 +7,7 @@
     min-height: 300px; 
     display: flex; 
     color: $color1;
-    margin-bottom: 50px; 
-
+    
 }
 
 .header-info {
@@ -30,14 +28,20 @@
     font-size: 30px;  
 }
 
+
+.left-part {
+    display: flex; 
+    
+}
+
 .header-task {
-    width: 15%; 
+    width: 50%; 
+    height: 100%; 
     background: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)); 
     display: flex; 
     flex-direction: column; 
-    justify-content: flex-end;
-    align-items: center;  
-    padding-bottom: 90px; 
+    align-items: center;
+    justify-content: center;    
     margin-left: 5px; 
 }
 

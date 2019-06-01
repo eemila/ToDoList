@@ -21,17 +21,20 @@
             <!-- <p class="today-is">Today is</p> -->
             <p class="current-date"></p>
         </div>
-        <div class="header-task header-personal">
-            <p class="task-no" id="personal-no">Number will be here</p>
-            <p class="header-task-type">Personal</p>
-        </div>
-        <div class="header-task header-business">
-            <p class="task-no" id="business-no">Number will be here</p>
-            <p class="header-task-type">Business</p>
+        <div class="left-part">
+            <div class="header-task header-personal">
+              <p class="task-no" id="personal-no">Number will be here</p>
+              <p class="header-task-type">Personal</p>
+            </div>
+            <div class="header-task header-business">
+              <p class="task-no" id="business-no">Number will be here</p>
+              <p class="header-task-type">Business</p>
+          </div>
         </div>
         <button class="add-btn">+
-          <!-- <i class="fas fa-plus-circle"></i> -->
-        </button>
+            <!-- <i class="fas fa-plus-circle"></i> -->
+          </button>
+        
     </header>
 
 <!--Dialog-box - Form-->
@@ -41,7 +44,6 @@
         <div class="modal-header">
           <i class="fas fa-thumbtack"></i>
           <h5 class="modal-title">My things</h5>
-          
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -49,11 +51,11 @@
         <div class="modal-body">
           <!--Radio choose-->
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="personalRadio" value="option1">
+                <input class="form-check-input" type="radio" name="radioTaskType" id="personalRadio" value="Personal">
                 <label class="form-check-label" for="inlineRadio1">Personal</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="businessRadio" value="option2">
+                <input class="form-check-input" type="radio" name="radioTaskType" id="businessRadio" value="Business">
                 <label class="form-check-label" for="inlineRadio2">Business</label>
               </div>
             <!--Form-->
@@ -94,22 +96,7 @@
                           </tr>
                         </thead>
                         <tbody class="tabBody">
-                          <!-- <tr>
-                            <th scope="row">1</th>                                <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>                                <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                          </tr> -->
+                         
                         </tbody>
                       </table>    
             </div>
