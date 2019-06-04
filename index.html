@@ -23,11 +23,11 @@
         </div>
         <div class="left-part">
             <div class="header-task header-personal">
-              <p class="task-no" id="personal-no">Number will be here</p>
+              <p class="task-no" id="personal-no"></p>
               <p class="header-task-type">Personal</p>
             </div>
             <div class="header-task header-business">
-              <p class="task-no" id="business-no">Number will be here</p>
+              <p class="task-no" id="business-no"></p>
               <p class="header-task-type">Business</p>
           </div>
         </div>
@@ -51,13 +51,13 @@
         <div class="modal-body">
           <!--Radio choose-->
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="radioTaskType" id="personalRadio" value="Personal">
-                <label class="form-check-label" for="inlineRadio1">Personal</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="radioTaskType" id="businessRadio" value="Business">
-                <label class="form-check-label" for="inlineRadio2">Business</label>
-              </div>
+              <input class="form-check-input" type="radio" name="radioTaskType" id="personalRadio" value="Personal">
+              <label class="form-check-label" for="inlineRadio1">Personal</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="radioTaskType" id="businessRadio" value="Business">
+              <label class="form-check-label" for="inlineRadio2">Business</label>
+            </div>
             <!--Form-->
             <form>
                 <div class="form-group">
@@ -71,6 +71,9 @@
                 <div class="form-group">
                     <label for="formGroupExampleInput3">time</label>
                     <input type="text" class="form-control" id="formTime" placeholder="When do you have to complete">
+                </div>
+                <div class="alert">
+                  <p class="alert-message hidden">Type to-do and place or time at least</p>
                 </div>
             </form>  
         </div>
@@ -103,9 +106,18 @@
         </div>
     </section>
     
-    <script src="app.js"></script>
+<!--Hidden elements--> 
+<!-- <section class="hidden">
+  <button class="check-btn list-btn"><i class="far fa-calendar-check fa-2x"></i></button>
+  <button class="del-btn list-btn"><i class="far fa-calendar-times fa-2x"></i></button>
+  <span class="list-icon suitcase-icon"><i class="fas fa-briefcase fa-2x"></i></span>
+  <span class="list-icon home-icon"><i class="fas list-icon fa-home fa-2x"></i></span>
+</section>    -->
+
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>

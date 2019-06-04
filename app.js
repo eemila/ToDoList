@@ -1,8 +1,26 @@
 document.addEventListener("DOMContentLoaded", function(){
 
+const addTask = document.querySelector(".add-btn");
+const listTab = document.querySelector(".tabBody");
+const pinBtn = document.querySelector(".btn-modal");
+// const radioType = document.querySelectorAll(".form-check-input");
+const formTask = document.querySelector("#formTask");
+const formPlace = document.querySelector("#formPlace");
+const formTime = document.querySelector("#formTime");
+const alertMess = document.querySelector(".alert-message"); 
+const checkBtn = document.querySelector(".check-btn"); 
+const delBtn = document.querySelector(".del-btn");
+const businessIcon = document.querySelector(".fa-briefcase");
+const personalIcon = document.querySelector(".fa-home"); 
+const personNo = document.querySelector("#personal-no"); 
+const bussNo = document.querySelector("#business-no"); 
+var counterPer = 0;
+var counterBus = 0; 
+
+
 //displays current date in header
-var todayIs = document.querySelector(".current-date")
-var monthNames =["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+const todayIs = document.querySelector(".current-date")
+const monthNames =["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 function showDate(){
     var today = new Date();
@@ -13,12 +31,10 @@ function showDate(){
     return  "Today is " + day + "  " + monthNames[month] + "  " + year;
 };
 
-todayIs.innerText = showDate()
+todayIs.innerText = showDate();
 
 
 // shows modal pop-up form
-var addTask = document.querySelector(".add-btn"); 
-
 addTask.addEventListener("click", function(){
     $('#myModal').modal('show') 
     
@@ -26,56 +42,102 @@ addTask.addEventListener("click", function(){
 
 
 // adds new task to list
-var listTab = document.querySelector(".tabBody"); 
-var pinBtn = document.querySelector(".btn-modal");
-var radioType = document.querySelectorAll(".form-check-input");
-var formTask = document.querySelector("#formTask"); 
-var formPlace = document.querySelector("#formPlace"); 
-var formTime = document.querySelector("#formTime"); 
+pinBtn.addEventListener("click", function(evn){
+    evn.preventDefault();
 
- 
-pinBtn.addEventListener("click", function(event){
+    if (!formTask.value && !formPlace.value || !formTask.value && !formTime.value) {
+        alertMess.classList.remove("hidden"); 
+        
+    } 
+    else {
+        let radType = null;
 
-    radioType.forEach(function(){
-        if(document.querySelector("#personalRadio").checked) { 
-            radType = document.querySelector("#personalRadio").value;
-        } 
-        if(document.querySelector("#businessRadio").checked) {
-            radType = document.querySelector("#businessRadio").value;
-        }; 
-    })
-    
-    var td1 = document.createElement("td")
-    td1.innerText = radType;
-    var td2 = document.createElement("td")
-    td2.innerText = formTask.value; 
-    var td3 = document.createElement("td")
-    td3.innerText = formPlace.value;
-    var td4 = document.createElement("td")
-    td4.innerText = formTime.value; 
-    var td5 = document.createElement("td")
-    // td5.innerText =  
-    
-    var newLine = document.createElement("tr")
+        if (document.querySelector("#personalRadio").checked) {
+            radType = personalIcon; 
+            // document.querySelector("#personalRadio").value;
+        } else {
+            radType = businessIcon; 
+            // document.querySelector("#businessRadio").value;
+        };
 
-    newLine.appendChild(td1);
-    newLine.appendChild(td2); 
-    newLine.appendChild(td3);
-    newLine.appendChild(td4);
-    newLine.appendChild(td5);
+        var newLine = document.createElement("tr");
+        newLine.innerHTML = 
+            // `<td>${radType}</td>
+            `<td>
+                <span class="list-icon suitcase-icon" id="suitcase"><i class="fas fa-briefcase fa-2x"></i></span>
+                <span class="list-icon home-icon id="home"><i class="fas list-icon fa-home fa-2x"></i></span>
+            </td>
+            <td>${formTask.value}</td>
+            <td>${formPlace.value}</td>
+            <td>${formTime.value}</td>
+            <td>
+                <button class="check-btn list-btn" id="check"><i class="far fa-calendar-check fa-lg"></i></button>
+                <button class="del-btn list-btn" id="delete"><i class="far fa-calendar-times fa-lg"></i></button>
+            </td>`;
 
-    listTab.appendChild(newLine);
+        listTab.appendChild(newLine);
 
-    $(':input').val('');
+        formTask.value = "";
+        formPlace.value = "";
+        formTime.value = "";
+        alertMess.classList.add("hidden"); //czy potrzebne?
+        $('#myModal').modal('hide');
 
-    // if empty inputs NIE DZIAŁA PÓKI CO 
-    // if(formTask === "")&&(formPlace === "")||(formTask === "")&&(formTime === ""){
-    //     console.log("Type your task before having it pinned");
-    // }
+        //counter for tasks - personal/business
+        if (document.querySelector("#personalRadio").checked){ 
+            counterPer += 1; 
+            personNo.innerText = counterPer; 
+        } if (document.querySelector("#businessRadio").checked){ 
+            counterBus += 1; 
+            bussNo.innerText = counterBus;
+        };
+          
+    }
+});
 
-    event.preventDefault();
-}); 
+
+//functions for list buttons - check & delete
+// checkBtn.addEventListener("click", function(){
+//     alert("ługabuga"); 
+// });
+
+
+// delBtn.addEventListener("click", function(){
+//     //ma usuwać linię
+// });
+
 
 
 //closes DOM
 }); 
+
+
+
+//notes
+
+//usuwanie linii po kliku na btn x w wierszu - NIE DZIAŁA
+// $("body").on("click", "#delete", function(){
+//     const self = $(this); 
+//     self.addEventListener("click", function(){
+//         this.parent.parent.parent.classList.add("hidden"); 
+//     })
+// })
+
+
+//przekreślenie tekstu po kliku na checked w wierszu - NIE DZIAŁA
+// $("body").on("click", "#check", function() {
+//     const self = $(this);
+            // this.parent.parent.parent.style.textDecoration = "line-through";
+// }); 
+
+
+// ustawienie odpowiedniej ikony do zadania
+    // if (document.querySelector("#personalRadio").checked) {
+    //     const kurdemol = "#suitcase"; 
+    //         kurdemol.classList.add("hidden");
+
+    // } if (document.querySelector("#businessRadio").checked) {
+    //     const motylanoga = "#home"; 
+    //         motylanoga.classList.add("hidden");
+    // };
+  

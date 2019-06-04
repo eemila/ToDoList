@@ -7,13 +7,14 @@
 }
 
 body {
-    // font-family: 'Gudea', sans-serif;
     font-family: $font-family1;
     background-color: $color1; 
 }
 
+.hidden {
+    display:none; 
+}
 
-//Odkomentowac na koniec
-// .hidden {
-//     display:none; 
-// }
+.visible {
+    display: block; 
+}

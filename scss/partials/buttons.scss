@@ -27,3 +27,36 @@
 .btn-modal:hover{ 
     background-color: $color2; 
 }
+
+.list-btn {
+    display: inline-block; 
+    border: none; 
+    border-radius: 50%; 
+    background-color: $color3; 
+    color: $color1;
+    padding: 8px 10px; 
+    margin: 3px; 
+}
+
+.list-btn:hover{
+    cursor: pointer; 
+}
+
+.list-icon {
+    display: inline-block; 
+    border: none; 
+    border-radius: 50%; 
+    background-color: $color3; 
+    color: $color1;
+    padding: 8px 10px; 
+    margin: 3px; 
+}
+
+.home-icon {
+    padding: 0; 
+}
+
+.suitcase-icon {
+    padding: 9px 14px; 
+}
+
