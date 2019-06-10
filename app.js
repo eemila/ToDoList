@@ -8,8 +8,8 @@ const formTask = document.querySelector("#formTask");
 const formPlace = document.querySelector("#formPlace");
 const formTime = document.querySelector("#formTime");
 const alertMess = document.querySelector(".alert-message"); 
-const checkBtn = document.querySelector(".check-btn"); 
-const delBtn = document.querySelector(".del-btn");
+// const checkBtn = document.querySelector(".check-btn"); 
+// const delBtn = document.querySelector(".del-btn");
 const businessIcon = document.querySelector(".fa-briefcase");
 const personalIcon = document.querySelector(".fa-home"); 
 const personNo = document.querySelector("#personal-no"); 
@@ -50,22 +50,11 @@ pinBtn.addEventListener("click", function(evn){
         
     } 
     else {
-        let radType = null;
-
-        if (document.querySelector("#personalRadio").checked) {
-            radType = personalIcon; 
-            // document.querySelector("#personalRadio").value;
-        } else {
-            radType = businessIcon; 
-            // document.querySelector("#businessRadio").value;
-        };
-
         var newLine = document.createElement("tr");
         newLine.innerHTML = 
-            // `<td>${radType}</td>
             `<td>
                 <span class="list-icon suitcase-icon" id="suitcase"><i class="fas fa-briefcase fa-2x"></i></span>
-                <span class="list-icon home-icon id="home"><i class="fas list-icon fa-home fa-2x"></i></span>
+                <span class="list-icon home-icon" id="home"><i class="fas list-icon fa-home fa-2x"></i></span>
             </td>
             <td>${formTask.value}</td>
             <td>${formPlace.value}</td>
@@ -77,34 +66,52 @@ pinBtn.addEventListener("click", function(evn){
 
         listTab.appendChild(newLine);
 
+
+        //functions for list buttons - delete
+        newLine.querySelector('.del-btn').addEventListener('click', () => {
+            newLine.parentElement.removeChild(newLine); 
+        });
+
+        //functions for list buttons - check & uncheck
+        newLine.querySelector('.check-btn').addEventListener('click', () => {
+            newLine.style.textDecoration = "line-through";
+            newLine.style.color = "green"; 
+        });
+
+        newLine.querySelector('.check-btn').addEventListener('dblclick', () => {
+            newLine.style.textDecoration = "none";
+            newLine.style.color = "black";  
+        });
+    
+        // form reset & modal hide
         formTask.value = "";
         formPlace.value = "";
         formTime.value = "";
         alertMess.classList.add("hidden"); //czy potrzebne?
         $('#myModal').modal('hide');
 
+        
         //counter for tasks - personal/business
         if (document.querySelector("#personalRadio").checked){ 
             counterPer += 1; 
-            personNo.innerText = counterPer; 
-        } if (document.querySelector("#businessRadio").checked){ 
+            personNo.innerText = counterPer; newLine.querySelector("#suitcase").style.display = "none";
+        } if (document.querySelector("#businessRadio").checked){
+            // newLine.querySelector("#home").style.display = "none"; 
             counterBus += 1; 
             bussNo.innerText = counterBus;
         };
           
+        //proper icon selection
+        if (document.querySelector("#businessRadio").checked) {
+            newLine.querySelector("#home").style.display = "none";      
+        } else { 
+            newLine.querySelector("#suitcase").classList.add("hidden"); 
+        }; 
+
     }
 });
 
 
-//functions for list buttons - check & delete
-// checkBtn.addEventListener("click", function(){
-//     alert("ługabuga"); 
-// });
-
-
-// delBtn.addEventListener("click", function(){
-//     //ma usuwać linię
-// });
 
 
 
@@ -115,29 +122,12 @@ pinBtn.addEventListener("click", function(evn){
 
 //notes
 
-//usuwanie linii po kliku na btn x w wierszu - NIE DZIAŁA
-// $("body").on("click", "#delete", function(){
-//     const self = $(this); 
-//     self.addEventListener("click", function(){
-//         this.parent.parent.parent.classList.add("hidden"); 
-//     })
-// })
+//proper icon selection
+//     } if (document.querySelector("#businessRadio").checked) {
+//     const motylanoga = "#home"; 
+//         motylanoga.classList.add("hidden");
+//     };
 
 
-//przekreślenie tekstu po kliku na checked w wierszu - NIE DZIAŁA
-// $("body").on("click", "#check", function() {
-//     const self = $(this);
-            // this.parent.parent.parent.style.textDecoration = "line-through";
-// }); 
 
 
-// ustawienie odpowiedniej ikony do zadania
-    // if (document.querySelector("#personalRadio").checked) {
-    //     const kurdemol = "#suitcase"; 
-    //         kurdemol.classList.add("hidden");
-
-    // } if (document.querySelector("#businessRadio").checked) {
-    //     const motylanoga = "#home"; 
-    //         motylanoga.classList.add("hidden");
-    // };
-  
