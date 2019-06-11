@@ -54,7 +54,7 @@ pinBtn.addEventListener("click", function(evn){
         newLine.innerHTML = 
             `<td>
                 <span class="list-icon suitcase-icon" id="suitcase"><i class="fas fa-briefcase fa-2x"></i></span>
-                <span class="list-icon home-icon" id="home"><i class="fas list-icon fa-home fa-2x"></i></span>
+                <span class="list-icon home-icon" id="home"><i class="fas fa-home fa-2x"></i></span>
             </td>
             <td>${formTask.value}</td>
             <td>${formPlace.value}</td>

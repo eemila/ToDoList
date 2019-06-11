@@ -1,7 +1,6 @@
 # ToDoList
 I realize that every time you create to-do list puppy dies, but... eventually I sacrificed its innocent life in the name of knowledge pursuing (sorry, puppy). I created this simple task list so as to practice my basic js skills.
 
-https://eemila.github.io/ToDoList/
 
 ## Table of contents
 * [Technologies](#technologies)
@@ -12,7 +11,7 @@ https://eemila.github.io/ToDoList/
 * HTML5
 * SCSS
 * JavaScript
-* Bootstrap (table, modal)
+* Bootstrap4 (table, modal)
 * Gulp
 
 ## Status
@@ -22,3 +21,6 @@ _in progress_
 found on website: https://medium.muz.li/todo-list-inspiration-a1d736c2718a
 
 ## Layout
+
+## Additional info
+* thumbtack icon: Icons made by https://www.freepik.com/ from https://www.flaticon.com/ is licensed by http://creativecommons.org/licenses/by/3.0/ CC 3.0 BY

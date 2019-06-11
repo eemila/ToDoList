@@ -3,7 +3,6 @@
     background-size: cover;
     background-repeat: no-repeat; 
     background-position: bottom; 
-    /* height: 60vh;  */
     min-height: 300px; 
     display: flex; 
     color: $color1;
@@ -19,19 +18,17 @@
 }
 
 .header-title {
-    font-size: 60px; 
-    font-weight: 700;
-    // font-family: $font-family1; 
+    font-size: 4.2rem; 
+    font-weight: 700; 
 }
 
 .current-date {
-    font-size: 30px;  
+    font-size: 2rem;  
 }
 
 
 .left-part {
     display: flex; 
-    
 }
 
 .header-task {
@@ -47,9 +44,9 @@
 }
 
 .header-task-type {
-    font-size: 22px; 
+    font-size: 1.6rem; 
 }
 
 .task-no {
-    font-size: 40px; 
+    font-size: 2.3rem; 
 }
